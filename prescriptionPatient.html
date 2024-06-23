@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient | Prescription</title>
+    <link rel="stylesheet" href="PrescriptionPatient.css">
+    <link rel="stylesheet" href="navbarStyle.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <!-- Tahmid -->
+        <div class="navbar-inner">
+            <div class="dropdown">
+                <a href="/index.html" class="dropbtn">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Personal Information</a>
+                <div class="dropdown-content">
+                    <a href="/demography.html">Edit Your Information</a>
+                    <a href="/Profile.html">View Profile</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <!-- Dip -->
+                <a href="" class="dropbtn">Diagnosis Data</a>
+                <div class="dropdown-content">
+                    <a href="/Diagnosis.html">Add Diagnosis Data</a>
+                    <a href="/DiagnosisGraph.html">View Diagnosis History</a>
+  
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Doctors</a>
+                <div class="dropdown-content">
+                    <a href="/physician.html">View Physician Information</a>
+                    <!-- <a href="#services2">Subitem 2</a> -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Health Care Centers</a>
+                <div class="dropdown-content">
+                    <a href="/Hospitals.html">Search Hospitals</a>
+                    <a href="/DiagnosisCenter.html">Search Diagnosis Centers</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Vitals & Readings</a>
+                <div class="dropdown-content">
+                    <a href="/Shealth_input1.html">Add Daily Vitals</a>
+                    <a href="/Shealth_condition.html">Show History</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Diet & Recommendations</a>
+                <div class="dropdown-content">
+                    <a href="/Diet_input.html">Import Diet</a>
+                    <a href="/Diet.html">View Current Diet</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Prescription</a>
+                <div class="dropdown-content">
+                    <a href="/prescriptionPatient.html">Add Prescription</a>
+                    <a href="/viewPrescriptionPatient.html">View Prescription History</a>
+                    <!-- <a href="#contact3"></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class = "container">
+
+        <h3>Prescription Info Uploading Form</h3>
+
+        <form id="prescriptionForm">
+
+            <div class = "form">
+                <label for="doctorName">Doctor Name</label>
+                <input type="text" id="doctorName" name="doctorName" placeholder="Enter Doctor Name" required>
+
+            </div>
+
+            <div class = "form">
+                <label for="date">Prescribed Date: </label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- <div class = "form">
+
+                <label for="prescriptionID">Prescription ID</label>
+                <input type="text" id="prescriptionID" name="prescriptionID" placeholder="Enter prescription ID" required>
+
+            </div> -->
+
+            <div class = "form">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time">
+
+            </div>
+
+            <div id = "medicine-cont" class = "form">
+                
+                <label for="Medicine">Medicine: </label>
+                <input type="text" id="Medicine" name="medicine[]" placeholder="Enter Medicine name" required>
+                
+            
+
+
+            
+                <label for="Dosage">Dosage: </label>
+                <div class = "checkboxs">
+                    <input type = "checkbox" name = "Dosage" id = "morning" value = "morning">
+                    <label for = "morning">Morning</label>
+                        
+                        
+                    <input type = "checkbox" name = "Dosage" id = "noon" value = "noon">
+                    <label for = "noon">Noon</label>
+
+                        
+                    <input type = "checkbox" name = "Dosage" id = "night" value = "night">
+                    <label for = "night">Night</label>
+                </div>
+                
+            
+            
+           
+                <label for="amount">Amount to be taken: </label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount in ml/pill" required>
+            
+
+            
+                <label for="amount">Prescription dosage Time limit</label>
+                <input type="number" id="amountDosage" name="amountDosage" placeholder="Enter Dosage Time Limit" required>
+            </div>
+
+            <button type="button" class = "add-more" style = "background-color : #28a745" onclick="addMedicineInput()">Add medicine</button>
+
+            <!-- <div class = "form">
+                <label for="upload">Upload Prescription</label>
+                <input type="file" id="upload" name="uploadPrescription">
+
+            </div> -->
+            <a href="medicalTestPatient.html">
+                <button type="button" class = "testPage" style="background-color: rgb(244, 105, 92);">Add Tests</button>
+            </a>
+            
+            <button type = "submit" class = "submitButton" style="background-color: #007bff;">Submit</button>
+            
+
+        </form>
+
+    </div>
+
+
+    <script>
+        let medicineCount = 1;
+        
+
+        function addMedicineInput() {
+            medicineCount++;
+            
+            const medicinesContainer = document.getElementById('medicine-cont');
+            const newMedicineGroup = document.createElement('div');
+
+
+            newMedicineGroup.classList.add("form");
+            
+
+            newMedicineGroup.innerHTML = `
+                <label for="medicine-${medicineCount}">Medicine ${medicineCount}:</label>
+                <input type="text" id="medicine-${medicineCount}" name="medicines[]" required>
+
+                <label for="dosage-${medicineCount} ">Dosage: </label>
+                <div class="checkboxes" style="display: inline-flex;">
+                    <input type="checkbox" name="dosage-${medicineCount}" id="morning-${medicineCount}" value="morning">
+                    <label for="morning-${medicineCount}">Morning</label>
+
+                    <input type="checkbox" name="dosage-${medicineCount}" id="noon-${medicineCount}" value="noon">
+                    <label for="noon-${medicineCount}">Noon</label>
+
+                    <input type="checkbox" name="dosage-${medicineCount}" id="night-${medicineCount}" value="night">
+                    <label for="night-${medicineCount}">Night</label>
+                </div>
+
+                <label for="amount-${medicineCount}">Amount to be taken: </label>
+                <input type="number" id="amount-${medicineCount}" name="amount-${medicineCount}" placeholder="Enter amount in ml/pill" required>
+
+                <label for="amountDosage-${medicineCount}">Prescription dosage Time limit</label>
+                <input type="number" id="amountDosage-${medicineCount}" name="amountDosage-${medicineCount}" placeholder="Enter Dosage Time Limit" required>
+            `;
+
+            
+
+            medicinesContainer.appendChild(newMedicineGroup);
+        
+        }
+    </script>
+
+    
+</body>
+</html>

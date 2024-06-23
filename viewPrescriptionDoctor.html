@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor | View Prescription</title>
+    <link rel="stylesheet" href="viewPrescription.css">
+</head>
+<ul>
+    <li><a href="/prescriptionDoctor.html">Prescription Doctor</a></li>
+    <li><a href="/prescriptionPatient.html">Prescription Patient</a></li>
+    <li><a href="/viewPrescriptionDoctor.html">View Doctor Table</a></li>
+    <li><a href="/viewPrescriptionPatient.html">View patient Table</a></li>
+    <li><a href="/medicalTestDoctor.html">Test Doctor</a></li>
+    <li><a href="/medicalTestPatient.html">Test Patient</a></li>
+
+</ul>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+    <table>
+        <tr>
+            <th>Patient Name</th>
+            
+            <th>Gender</th>
+            <th>Birthdate</th>
+
+            <th>Medicines</th>
+            <th>Dosage</th>
+            <th>Medicine Quantity to be taken</th>
+            <th>Days to consume medicine</th>
+        </tr>
+
+        <tr>
+            <td>John Doe</td>
+             
+            <td>Male</td>
+            <td>01/12/2000</td>
+            <td>Paracetamol</td>
+            <td> Morning,Night</td>
+            <td>1</td>
+            <td>7</td>  
+        </tr>
+    </table>
+
+    <div id="myPlot" class="graph" style="width:100%;max-width:700px"></div>
+
+    <script>
+        const xArray = ["patient1", "patient2", "patient3", "patient4", "patient5"];
+        const yArray = [5,4,2,9,5];
+
+        const data = [{
+            x: xArray,
+            y: yArray,
+            type: "bar",
+            orientation:"v",
+            marker: {color:"rgba(0,0,255)"}
+        }];
+
+        const layout = {title:"Patient vs. Number of Prescription", xaxis:{title:"Patient Name"}, yaxis:{title:"Prescriptions"}};
+
+        Plotly.newPlot("myPlot", data, layout);
+    </script>
+    
+</body>
+</html>

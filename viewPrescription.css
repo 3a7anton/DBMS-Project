@@ -1,0 +1,72 @@
+body{
+    background-image:url("image.webp");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: rgb(41, 222, 225);
+
+}
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+th{
+
+background-color: #917bf1;
+border: 1px solid #000000;
+text-align: left;
+padding: 8px;
+}
+
+td{
+background-color: rgb(41, 222, 225);
+border: 1px solid #000000;
+text-align: left;
+padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+.graph{
+    
+    margin-left: 25%;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 15%;
+    box-shadow: none;
+    outline: none;
+}
+li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -20px;
+  }
+  
+
+  li a:hover {
+    background-color: #111;
+  }

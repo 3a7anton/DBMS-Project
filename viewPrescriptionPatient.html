@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient | View Prescription Info</title>
+    <link rel="stylesheet" href="viewPrescription.css">
+    <link rel="stylesheet" href="navbarStyle.css">
+</head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<body>
+
+    <div class="navbar">
+        <!-- Tahmid -->
+        <div class="navbar-inner">
+            <div class="dropdown">
+                <a href="/index.html" class="dropbtn">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Personal Information</a>
+                <div class="dropdown-content">
+                    <a href="/demography.html">Edit Your Information</a>
+                    <a href="/Profile.html">View Profile</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <!-- Dip -->
+                <a href="" class="dropbtn">Diagnosis Data</a>
+                <div class="dropdown-content">
+                    <a href="/Diagnosis.html">Add Diagnosis Data</a>
+                    <a href="/DiagnosisGraph.html">View Diagnosis History</a>
+  
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Doctors</a>
+                <div class="dropdown-content">
+                    <a href="/physician.html">View Physician Information</a>
+                    <!-- <a href="#services2">Subitem 2</a> -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Health Care Centers</a>
+                <div class="dropdown-content">
+                    <a href="/Hospitals.html">Search Hospitals</a>
+                    <a href="/DiagnosisCenter.html">Search Diagnosis Centers</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Vitals & Readings</a>
+                <div class="dropdown-content">
+                    <a href="/Shealth_input1.html">Add Daily Vitals</a>
+                    <a href="/Shealth_condition.html">Show History</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Diet & Recommendations</a>
+                <div class="dropdown-content">
+                    <a href="/Diet_input.html">Import Diet</a>
+                    <a href="/Diet.html">View Current Diet</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Prescription</a>
+                <div class="dropdown-content">
+                    <a href="/prescriptionPatient.html">Add Prescription</a>
+                    <a href="/viewPrescriptionPatient.html">View Prescription History</a>
+                    <!-- <a href="#contact3"></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <table>
+        <tr>
+            <th>Doctor Name</th>
+            
+            <th>Prescribed Date</th>
+            <th>Time</th>
+            <th>Medicines</th>
+            <th>Dosage</th>
+            <th>Medicine Quantity to be taken</th>
+            <th>Days to consume medicine</th>
+            
+        </tr>
+
+        <tr>    
+            <td>Dr. Smith</td>
+              
+            <td>2022-12-01</td>
+            <td>11.20 AM</td> 
+            <td>Paracetamol</td>
+            <td> Morning,Night</td>
+            <td>1</td>
+            <td>7Days</td>
+        </tr>
+
+    </table>
+    <div id="myPlot" class ="graph" style="width:100%;max-width:700px"></div>
+
+    <script>
+        const xArray = ["P001", "P002", "P003", "P004", "P005"];
+        const yArray = [4,0,2,4,1];
+
+        const data = [{
+            x: xArray,
+            y: yArray,
+            type: "bar",
+            orientation:"v",
+            marker: {color:"rgba(0,0,255)"}
+        }];
+
+        const layout = {title:"Prescription ID vs. Number of Medicines", xaxis:{title:"Prescription ID"}, yaxis:{title:"Medicines"}};
+
+        Plotly.newPlot("myPlot", data, layout);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Test Data</title>
+    <link rel="stylesheet" href="medicalTest.css">
+    <link rel="stylesheet" href="navbarStyle.css">
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <!-- Tahmid -->
+        <div class="navbar-inner">
+            <div class="dropdown">
+                <a href="/index.html" class="dropbtn">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Personal Information</a>
+                <div class="dropdown-content">
+                    <a href="/demography.html">Edit Your Information</a>
+                    <a href="/Profile.html">View Profile</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <!-- Dip -->
+                <a href="" class="dropbtn">Diagnosis Data</a>
+                <div class="dropdown-content">
+                    <a href="/Diagnosis.html">Add Diagnosis Data</a>
+                    <a href="/DiagnosisGraph.html">View Diagnosis History</a>
+  
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Doctors</a>
+                <div class="dropdown-content">
+                    <a href="/physician.html">View Physician Information</a>
+                    <!-- <a href="#services2">Subitem 2</a> -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Health Care Centers</a>
+                <div class="dropdown-content">
+                    <a href="/Hospitals.html">Search Hospitals</a>
+                    <a href="/DiagnosisCenter.html">Search Diagnosis Centers</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Vitals & Readings</a>
+                <div class="dropdown-content">
+                    <a href="/Shealth_input1.html">Add Daily Vitals</a>
+                    <a href="/Shealth_condition.html">Show History</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Diet & Recommendations</a>
+                <div class="dropdown-content">
+                    <a href="#about1">Show My Diet</a>
+                    <a href="#about2">My Daily Recommendations</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Prescription</a>
+                <div class="dropdown-content">
+                    <a href="/prescriptionPatient.html">Add Prescription</a>
+                    <a href="/viewPrescriptionPatient.html">View Prescription History</a>
+                    <!-- <a href="#contact3"></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class ="container">
+
+        <h3>Medical Test</h3>
+
+        <form id="medicalTestForm">
+
+            <div class = "form">
+                <label for="patientName">Patient Name</label>
+                <input type="text" id="patientName" name="patientName" placeholder="Enter Patient Name" required>
+            </div>
+
+            <div class = "form">
+                <label for="patientID">Patient ID</label>
+                <input type="text" id="patientID" name="patientID" placeholder="Enter Patient ID" required>
+            </div>
+
+            <div class = "form" id = "test-cont">
+                <label for="test">Test Name</label>
+                <input type="text" id="test" name="tests[]" placeholder="Enter Test Name" required>
+            </div>
+
+            <div class = "form">
+                <label for = "notes">Additional Notes</label>
+                <textarea name="notes" id="note" placeholder="Enter Additional Notes(if any)"></textarea>
+            </div>
+
+            <button type="button" class = "add-more" style = "background-color : #28a745" onclick="addTestInput()">Add Test</button>
+            
+            <button type = "submit" class = "submitButton" style="background-color: #007bff;">Submit</button>
+            
+        </form>
+
+    </div>
+
+    <script>
+        let testCount= 1;
+        function addTestInput() {
+            testCount++;
+
+            const testContainer = document.getElementById("test-cont");
+            const newTestGroup = document.createElement("div");
+
+            newTestGroup.classList.add("form");
+            newTestGroup.innerHTML = `
+                <label for="test-${testCount}">Test ${testCount}</label>
+                <input type="text" id="test-${testCount}" name="tests[]" required>
+            `;
+
+            testContainer.appendChild(newTestGroup);
+            
+        }
+    </script>
+    
+</body>
+</html>

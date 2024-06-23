@@ -1,0 +1,23 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(47, 151, 219, 0.658);
+}
+.card {
+    background-color: azure;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important; /* Default height for all charts */
+}
+.bmiChart {
+    height: 600px !important; /* Adjust the height for the BMI chart */
+}
+
+/* Customize further as needed */

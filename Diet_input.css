@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-image: url(https://images.immediate.co.uk/production/volatile/sites/30/2023/09/Paleo-diet-foods-3eaa4b8.jpg?quality=90&webp=true&resize=300,272);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+section {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px;
+    margin: 12%;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}

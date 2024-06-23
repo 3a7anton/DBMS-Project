@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients Current Diet</title>
+    <link rel="stylesheet" href="Diet.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="navbarStyle.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <!-- Tahmid -->
+        <div class="navbar-inner">
+            <div class="dropdown">
+                <a href="/index.html" class="dropbtn">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Personal Information</a>
+                <div class="dropdown-content">
+                    <a href="/demography.html">Edit Your Information</a>
+                    <a href="/Profile.html">View Profile</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <!-- Dip -->
+                <a href="" class="dropbtn">Diagnosis Data</a>
+                <div class="dropdown-content">
+                    <a href="/Diagnosis.html">Add Diagnosis Data</a>
+                    <a href="/DiagnosisGraph.html">View Diagnosis History</a>
+  
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Doctors</a>
+                <div class="dropdown-content">
+                    <a href="/physician.html">View Physician Information</a>
+                    <!-- <a href="#services2">Subitem 2</a> -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Health Care Centers</a>
+                <div class="dropdown-content">
+                    <a href="/Hospitals.html">Search Hospitals</a>
+                    <a href="/DiagnosisCenter.html">Search Diagnosis Centers</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Vitals & Readings</a>
+                <div class="dropdown-content">
+                    <a href="/Shealth_input1.html">Add Daily Vitals</a>
+                    <a href="/Shealth_condition.html">Show History</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Diet & Recommendations</a>
+                <div class="dropdown-content">
+                    <a href="/Diet_input.html">Import Diet</a>
+                    <a href="/Diet.html">View Current Diet</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Prescription</a>
+                <div class="dropdown-content">
+                    <a href="/prescriptionPatient.html">Add Prescription</a>
+                    <a href="/viewPrescriptionPatient.html">View Prescription History</a>
+                    <!-- <a href="#contact3"></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <h1>Hello, Mr.Tahmid</h1>
+    <h2>45 yrs</h2>
+    <p>Blood group is A+</p>
+    <br>
+    <div class="card">
+        <h2>Food Intake Today</h2>
+        <div id="foodChartContainer">
+            <canvas id="foodChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>BMI Graph</h2>
+        <canvas id="bmiChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h2>Weekly Food Consumption</h2>
+        <canvas id="weeklyFoodChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h2>Recommended Foods</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Calories</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Spinach</td>
+                    <td>20 kcal</td>
+                </tr>
+                <tr>
+                    <td>Broccoli</td>
+                    <td>20 kcal</td>
+                </tr>
+                <tr>
+                    <td>Carrots</td>
+                    <td>20 kcal</td>
+                </tr>
+                <tr>
+                    <td>Apples</td>
+                    <td>20 kcal</td>
+                </tr>
+                <tr>
+                    <td>Oranges</td>
+                    <td>20 kcal</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Highest Calorie Intake</h2>
+        <div id="calorieChartContainer">
+            <canvas id="calorieChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for the charts
+        const foodData = [
+            { label: 'Protein', value: 40 },
+            { label: 'Carbs', value: 30 },
+            { label: 'Fats', value: 20 },
+            { label: 'Fiber', value: 10 }
+        ];
+
+        const bmiData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            datasets: [{
+                label: 'BMI',
+                data: [22, 23, 24, 23.5, 24],
+                borderColor: '#0074D9',
+                fill: false
+            }]
+        };
+
+        const weeklyFoodData = {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Food Consumption',
+                data: [1500, 1800, 2000, 1900, 2100, 2200, 2300],
+                borderColor: '#FF4136',
+                fill: false
+            }]
+        };
+
+        const calorieData = {
+            labels: ['Pizza', 'Burger', 'Chocolate', 'Salad'],
+            datasets: [{
+                label: 'Calories',
+                data: [800, 600, 400, 200],
+                backgroundColor: ['#FF4136', '#FF851B', '#0074D9', '#2ECC40'],
+                borderWidth: 1
+            }]
+        };
+
+        // Create charts
+        createCircularChart('foodChart', foodData);
+        createLineChart('bmiChart', bmiData);
+        createLineChart('weeklyFoodChart', weeklyFoodData);
+        createHorizontalBarChart('calorieChart', calorieData);
+
+        // Functions to create charts (use Chart.js or any other library)
+        function createCircularChart(id, data) {
+            const ctx = document.getElementById(id).getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: data.map(item => item.label),
+                    datasets: [{
+                        data: data.map(item => item.value),
+                        backgroundColor: ['#FF4136', '#FF851B', '#0074D9', '#2ECC40'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        function createLineChart(id, data) {
+            const ctx = document.getElementById(id).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: data.datasets[0].label,
+                        data: data.datasets[0].data,
+                        borderColor: '#0074D9',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        function createHorizontalBarChart(id, data) {
+            const ctx = document.getElementById(id).getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: data.datasets[0].label,
+                        data: data.datasets[0].data,
+                        backgroundColor: data.datasets[0].backgroundColor,
+                        borderWidth: data.datasets[0].borderWidth
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

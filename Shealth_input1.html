@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Current Health Condition</title>
+    <link rel="stylesheet" href="Shealth_input1.css" />
+    <link rel="stylesheet" href="navbarStyle.css">
+  </head>
+  <body>
+
+    <div class="navbar">
+      <!-- Tahmid -->
+      <div class="navbar-inner">
+          <div class="dropdown">
+              <a href="/index.html" class="dropbtn">Home</a>
+          </div>
+          <div class="dropdown">
+              <a href="" class="dropbtn">Personal Information</a>
+              <div class="dropdown-content">
+                  <a href="/demography.html">Edit Your Information</a>
+                  <a href="/Profile.html">View Profile</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <!-- Dip -->
+              <a href="" class="dropbtn">Diagnosis Data</a>
+              <div class="dropdown-content">
+                  <a href="/Diagnosis.html">Add Diagnosis Data</a>
+                  <a href="/DiagnosisGraph.html">View Diagnosis History</a>
+
+              </div>
+          </div>
+          <div class="dropdown">
+              <a href="" class="dropbtn">Doctors</a>
+              <div class="dropdown-content">
+                  <a href="/physician.html">View Physician Information</a>
+                  <!-- <a href="#services2">Subitem 2</a> -->
+              </div>
+          </div>
+          <div class="dropdown">
+              <a href="#about" class="dropbtn">Health Care Centers</a>
+              <div class="dropdown-content">
+                  <a href="/Hospitals.html">Search Hospitals</a>
+                  <a href="/DiagnosisCenter.html">Search Diagnosis Centers</a>
+      
+              </div>
+          </div>
+          <div class="dropdown">
+              <a href="#about" class="dropbtn">Vitals & Readings</a>
+              <div class="dropdown-content">
+                  <a href="/Shealth_input1.html">Add Daily Vitals</a>
+                  <a href="/Shealth_condition.html">Show History</a>
+      
+              </div>
+          </div>
+          <div class="dropdown">
+              <a href="#about" class="dropbtn">Diet & Recommendations</a>
+              <div class="dropdown-content">
+                  <a href="/Diet_input.html">Import Diet</a>
+                  <a href="/Diet.html">View Current Diet</a>
+      
+              </div>
+          </div>
+          <div class="dropdown">
+              <a href="" class="dropbtn">Prescription</a>
+              <div class="dropdown-content">
+                  <a href="/prescriptionPatient.html">Add Prescription</a>
+                  <a href="/viewPrescriptionPatient.html">View Prescription History</a>
+                  <!-- <a href="#contact3"></a> -->
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <main>
+      <div class="container">
+        <form action="">
+          <h2>Record Daily Health Vitals</h2>
+          <div class="information">
+            <label for="date_and_time">Date and Time:</label>
+            <input
+              type="datetime-local"
+              id="date_and_time"
+              name="date_and_time"
+              placeholder="Select a date and time"
+            />
+          </div>
+          <div class="information">
+            <label for="blood_pressure">Blood Pressure (mmHg):</label>
+            <input
+              type="number"
+              id="blood_pressure"
+              name="blood_pressure"
+              placeholder="e.g., 120/80 mmHg"
+            />
+          </div>
+          <div class="information">
+            <label for="blood_sugar">Blood Sugar (mg/dL):</label>
+            <input
+              type="number"
+              id="blood_sugar"
+              name="blood_sugar"
+              placeholder="e.g., 80 mg/dL"
+            />
+          </div>
+          <div class="information">
+            <label for="heart_rate">Heart Rate (bpm):</label>
+            <input
+              type="number"
+              id="heart_rate"
+              name="heart_rate"
+              placeholder="e.g., 70 bpm"
+            />
+          </div>
+          <div class="information">
+            <label for="HbA1c">HbA1c (%):</label>
+            <input
+              type="number"
+              id="HbA1c"
+              name="HbA1c"
+              placeholder="e.g., 5.7 %"
+            />
+          </div>
+          <div class="information">
+            <label for="temperature">Temperature (°F):</label>
+            <input
+              type="number"
+              id="temperature"
+              name="temperature"
+              placeholder="e.g., 98.6 °F"
+            />
+          </div>
+          <div class="information">
+            <label for="notes">Additional Notes</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Enter any additional information here...😊"
+            ></textarea>
+          </div>
+          <button onclick="alert('Confirm')">
+            <a href="/Shealth_condition.html">Submit</a>
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+    <script></script>
+  </body>
+</html>

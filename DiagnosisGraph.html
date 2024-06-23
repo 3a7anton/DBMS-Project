@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Representation</title>
+    <link rel="stylesheet" href="graph.css">
+    <link rel="stylesheet" href="navbarStyle.css">
+</head>
+<body>
+    <div class="navbar">
+        <!-- Tahmid -->
+        <div class="navbar-inner">
+            <div class="dropdown">
+                <a href="/index.html" class="dropbtn">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Personal Information</a>
+                <div class="dropdown-content">
+                    <a href="/demography.html">Edit Your Information</a>
+                    <a href="/Profile.html">View Profile</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <!-- Dip -->
+                <a href="" class="dropbtn">Diagnosis Data</a>
+                <div class="dropdown-content">
+                    <a href="/Diagnosis.html">Add Diagnosis Data</a>
+                    <a href="/DiagnosisGraph.html">View Diagnosis History</a>
+  
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Doctors</a>
+                <div class="dropdown-content">
+                    <a href="/physician.html">View Physician Information</a>
+                    <!-- <a href="#services2">Subitem 2</a> -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Health Care Centers</a>
+                <div class="dropdown-content">
+                    <a href="/Hospitals.html">Search Hospitals</a>
+                    <a href="/DiagnosisCenter.html">Search Diagnosis Centers</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Vitals & Readings</a>
+                <div class="dropdown-content">
+                    <a href="/Shealth_input1.html">Add Daily Vitals</a>
+                    <a href="/Shealth_condition.html">Show History</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Diet & Recommendations</a>
+                <div class="dropdown-content">
+                    <a href="/Diet_input.html">Import Diet</a>
+                    <a href="/Diet.html">View Current Diet</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Prescription</a>
+                <div class="dropdown-content">
+                    <a href="/prescriptionPatient.html">Add Prescription</a>
+                    <a href="/viewPrescriptionPatient.html">View Prescription History</a>
+                    <!-- <a href="#contact3"></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Test Graphs</h1>
+        <div id="testOptions" class="test-options">
+            <button class="test-option" data-test="hemoglobine">Hemoglobine</button>
+            <button class="test-option" data-test="bloodSugar">Blood Sugar</button>
+            <button class="test-option" data-test="cholesterol">Cholesterol</button>
+            <button class="test-option" data-test="bloodPressure">Blood Pressure</button>
+            <button class="test-option" data-test="urineTest">Urine Test</button>
+        </div>
+        <div id="message" class="message"></div>
+        <canvas id="myChart"></canvas>
+        <button class="back-button" onclick="history.back()">Back</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="graph.js"></script>
+</body>
+</html>

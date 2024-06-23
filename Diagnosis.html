@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis Data</title>
+    <link rel="stylesheet" href="Diagnosis.css">
+    <link rel="stylesheet" href="navbarStyle.css">
+</head>
+<body>
+
+
+    <div class="navbar">
+        <!-- Tahmid -->
+        <div class="navbar-inner">
+            <div class="dropdown">
+                <a href="/index.html" class="dropbtn">Home</a>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Personal Information</a>
+                <div class="dropdown-content">
+                    <a href="/demography.html">Edit Your Information</a>
+                    <a href="/Profile.html">View Profile</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <!-- Dip -->
+                <a href="" class="dropbtn">Diagnosis Data</a>
+                <div class="dropdown-content">
+                    <a href="/Diagnosis.html">Add Diagnosis Data</a>
+                    <a href="/DiagnosisGraph.html">View Diagnosis History</a>
+  
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Doctors</a>
+                <div class="dropdown-content">
+                    <a href="/physician.html">View Physician Information</a>
+                    <!-- <a href="#services2">Subitem 2</a> -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Health Care Centers</a>
+                <div class="dropdown-content">
+                    <a href="/Hospitals.html">Search Hospitals</a>
+                    <a href="/DiagnosisCenter.html">Search Diagnosis Centers</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Vitals & Readings</a>
+                <div class="dropdown-content">
+                    <a href="/Shealth_input1.html">Add Daily Vitals</a>
+                    <a href="/Shealth_condition.html">Show History</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#about" class="dropbtn">Diet & Recommendations</a>
+                <div class="dropdown-content">
+                    <a href="/Diet_input.html">Import Diet</a>
+                    <a href="/Diet.html">View Current Diet</a>
+        
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn">Prescription</a>
+                <div class="dropdown-content">
+                    <a href="/prescriptionPatient.html">Add Prescription</a>
+                    <a href="/viewPrescriptionPatient.html">View Prescription History</a>
+                    <!-- <a href="#contact3"></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Diagnosis Data</h1>
+        <form id="diagnosisForm">
+            <label for="testSelect">Choose your test:</label>
+            <select id="testSelect">
+                <option value="">Select a test</option>
+                <option value="hemoglobine">Hemoglobine</option>
+                <option value="bloodSugar">Blood Sugar</option>
+                <option value="cholesterol">Cholesterol</option>
+                <option value="bloodPressure">Blood Pressure</option>
+                <option value="urineTest">Urine Test</option>
+                <!-- Add more options as needed -->
+            </select>
+            
+            <div id="testParameters" class="test-parameters">
+                Test related parameter according to dropdown
+            </div>
+            
+            <label for="datePicker">Date:</label>
+            <input type="date" id="datePicker">
+            
+            <label for="diagnosisCenter">Diagnosis center:</label>
+            <input type="text" id="diagnosisCenter" placeholder="Enter diagnosis center name">
+            
+            <label for="fileInput" class="file-label">Upload Diagnosis Report</label>
+            <input type="file" id="fileInput" class="file-input" accept="application/pdf">
+            
+            <div class="button-container">
+                <button type="button" id="saveDataButton">Save data</button>
+                <button type="button" id="showGraphButton">Show Graph</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="Diagnosis.js"></script>
+</body>
+</html>

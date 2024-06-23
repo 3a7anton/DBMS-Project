@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Hospital Details</h1>
+    </div>
+    <div class="hospital-detail">
+        <h2 id="hospital-name"></h2>
+        <p id="hospital-capacity"></p>
+        <p id="hospital-icu-beds"></p>
+        <p id="hospital-contact"></p>
+        <p id="hospital-location"></p>
+        <a id="hospital-map" href="#" target="_blank">Google Map Link</a>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split('&').forEach(pair => {
+                const [key, value] = pair.split('=');
+                params[decodeURIComponent(key)] = decodeURIComponent(value);
+            });
+            return params;
+        }
+
+        window.onload = function() {
+            const params = getQueryParams();
+            document.getElementById('hospital-name').innerText = params.name;
+            document.getElementById('hospital-capacity').innerText = 'Total Beds: ' + params.capacity;
+            document.getElementById('hospital-icu-beds').innerText = 'ICU Beds: ' + params.icuBeds;
+            document.getElementById('hospital-contact').innerText = 'Contact: ' + params.contact;
+            document.getElementById('hospital-location').innerText = 'Location: ' + params.city;
+            document.getElementById('hospital-map').href = 'https://www.google.com/maps/search/?api=1&query=' + params.name + ',' + params.city;
+        }
+    </script>
+</body>
+</html>

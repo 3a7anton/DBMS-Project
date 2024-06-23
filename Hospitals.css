@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    color: #00796b;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    margin: 20px 0;
+    background-color: #0097a7;
+    color: white;
+    padding: 20px 0;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #00acc1;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+select, input[type="text"] {
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #00796b;
+    border-radius: 4px;
+}
+
+.hospital-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hospital-block {
+    border: 1px solid #0097a7;
+    color: black;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: #b2ebf2;
+    transition: transform 0.2s;
+}
+
+.hospital-block:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.hospital-block a {
+    text-decoration: none;
+    color: inherit;
+}

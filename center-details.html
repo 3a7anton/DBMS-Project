@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostics Center Details</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Diagnostics Center Details</h1>
+    </div>
+    <div class="center-detail">
+        <h2 id="center-name"></h2>
+        <p id="center-location"></p>
+        <p id="center-contact"></p>
+        <div id="test-details"></div>
+        <a id="center-map" href="#" target="_blank">Google Map Link</a>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split('&').forEach(pair => {
+                const [key, value] = pair.split('=');
+                params[decodeURIComponent(key)] = decodeURIComponent(value);
+            });
+            return params;
+        }
+
+        window.onload = function() {
+            const params = getQueryParams();
+            document.getElementById('center-name').innerText = params.name || 'N/A';
+            document.getElementById('center-location').innerText = 'Location: ' + (params.city || 'N/A');
+            document.getElementById('center-contact').innerText = 'Contact: ' + (params.contact || 'N/A');
+            document.getElementById('center-map').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(params.name || '') + ',' + encodeURIComponent(params.city || '');
+
+            // Test details
+            const services = params.services.split(', ');
+            const costs = ['BDT 500', 'BDT 5000', 'BDT 3000']; // Add actual costs here
+            const testDetailsDiv = document.getElementById('test-details');
+            testDetailsDiv.innerHTML = '<h3>Available Tests and Costs:</h3>';
+            
+            services.forEach((service, index) => {
+                const serviceDiv = document.createElement('div');
+                serviceDiv.className = 'service-box';
+                serviceDiv.innerHTML = `
+                    <div class="service-name">${service}</div>
+                    <div class="service-cost">${costs[index] || 'N/A'}</div>
+                `;
+                testDetailsDiv.appendChild(serviceDiv);
+            });
+        }
+    </script>
+</body>
+</html>
